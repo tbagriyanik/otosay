@@ -248,7 +248,7 @@ export default function App() {
               ctx.clearRect(0, 0, canvas.width, canvas.height);
               detectedObjects.forEach(prediction => {
                 const [x, y, width, height] = prediction.bbox;
-                const meta = CLASS_METADATA[prediction.class] || { color: '#22c55e', bg: 'rgba(34, 197, 94, 0.15)' };
+                const meta = CLASS_METADATA[prediction.class] || { color: '#22c55e', bg: 'rgba(34, 197, 94, 0.15)', label: prediction.class };
 
                 ctx.beginPath();
                 ctx.rect(x, y, width, height);
